@@ -1,0 +1,471 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		124024A61EDDADCD006E8CC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124024A51EDDADCD006E8CC1 /* AppDelegate.swift */; };
+		124024A81EDDADCD006E8CC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124024A71EDDADCD006E8CC1 /* ViewController.swift */; };
+		124024AA1EDDADCD006E8CC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 124024A91EDDADCD006E8CC1 /* Assets.xcassets */; };
+		124024AD1EDDADCD006E8CC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 124024AB1EDDADCD006E8CC1 /* Main.storyboard */; };
+		124024BB1EDDADEB006E8CC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 124024BA1EDDADEB006E8CC1 /* Cocoa.framework */; };
+		124024C01EDDADEB006E8CC1 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124024BF1EDDADEB006E8CC1 /* SourceEditorExtension.swift */; };
+		124024C21EDDADEB006E8CC1 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124024C11EDDADEB006E8CC1 /* SourceEditorCommand.swift */; };
+		124024C61EDDADEB006E8CC1 /* BlockCommentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 124024B81EDDADEB006E8CC1 /* BlockCommentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		124024C41EDDADEB006E8CC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1240249A1EDDADCD006E8CC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 124024B71EDDADEB006E8CC1;
+			remoteInfo = BlockCommentExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		124024CA1EDDADEB006E8CC1 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				124024C61EDDADEB006E8CC1 /* BlockCommentExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		124024A21EDDADCD006E8CC1 /* BlockComment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlockComment.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		124024A51EDDADCD006E8CC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		124024A71EDDADCD006E8CC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		124024A91EDDADCD006E8CC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		124024AC1EDDADCD006E8CC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		124024AE1EDDADCD006E8CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		124024B81EDDADEB006E8CC1 /* BlockCommentExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlockCommentExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		124024BA1EDDADEB006E8CC1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		124024BE1EDDADEB006E8CC1 /* BlockCommentExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlockCommentExtension.entitlements; sourceTree = "<group>"; };
+		124024BF1EDDADEB006E8CC1 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		124024C11EDDADEB006E8CC1 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		124024C31EDDADEB006E8CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1240249F1EDDADCD006E8CC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124024B51EDDADEB006E8CC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124024BB1EDDADEB006E8CC1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		124024991EDDADCD006E8CC1 = {
+			isa = PBXGroup;
+			children = (
+				124024A41EDDADCD006E8CC1 /* BlockComment */,
+				124024BC1EDDADEB006E8CC1 /* BlockCommentExtension */,
+				124024B91EDDADEB006E8CC1 /* Frameworks */,
+				124024A31EDDADCD006E8CC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		124024A31EDDADCD006E8CC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				124024A21EDDADCD006E8CC1 /* BlockComment.app */,
+				124024B81EDDADEB006E8CC1 /* BlockCommentExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		124024A41EDDADCD006E8CC1 /* BlockComment */ = {
+			isa = PBXGroup;
+			children = (
+				124024A51EDDADCD006E8CC1 /* AppDelegate.swift */,
+				124024A71EDDADCD006E8CC1 /* ViewController.swift */,
+				124024A91EDDADCD006E8CC1 /* Assets.xcassets */,
+				124024AB1EDDADCD006E8CC1 /* Main.storyboard */,
+				124024AE1EDDADCD006E8CC1 /* Info.plist */,
+			);
+			path = BlockComment;
+			sourceTree = "<group>";
+		};
+		124024B91EDDADEB006E8CC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				124024BA1EDDADEB006E8CC1 /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		124024BC1EDDADEB006E8CC1 /* BlockCommentExtension */ = {
+			isa = PBXGroup;
+			children = (
+				124024BF1EDDADEB006E8CC1 /* SourceEditorExtension.swift */,
+				124024C11EDDADEB006E8CC1 /* SourceEditorCommand.swift */,
+				124024C31EDDADEB006E8CC1 /* Info.plist */,
+				124024BD1EDDADEB006E8CC1 /* Supporting Files */,
+			);
+			path = BlockCommentExtension;
+			sourceTree = "<group>";
+		};
+		124024BD1EDDADEB006E8CC1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				124024BE1EDDADEB006E8CC1 /* BlockCommentExtension.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		124024A11EDDADCD006E8CC1 /* BlockComment */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124024B11EDDADCD006E8CC1 /* Build configuration list for PBXNativeTarget "BlockComment" */;
+			buildPhases = (
+				1240249E1EDDADCD006E8CC1 /* Sources */,
+				1240249F1EDDADCD006E8CC1 /* Frameworks */,
+				124024A01EDDADCD006E8CC1 /* Resources */,
+				124024CA1EDDADEB006E8CC1 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				124024C51EDDADEB006E8CC1 /* PBXTargetDependency */,
+			);
+			name = BlockComment;
+			productName = BlockComment;
+			productReference = 124024A21EDDADCD006E8CC1 /* BlockComment.app */;
+			productType = "com.apple.product-type.application";
+		};
+		124024B71EDDADEB006E8CC1 /* BlockCommentExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 124024C71EDDADEB006E8CC1 /* Build configuration list for PBXNativeTarget "BlockCommentExtension" */;
+			buildPhases = (
+				124024B41EDDADEB006E8CC1 /* Sources */,
+				124024B51EDDADEB006E8CC1 /* Frameworks */,
+				124024B61EDDADEB006E8CC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlockCommentExtension;
+			productName = BlockCommentExtension;
+			productReference = 124024B81EDDADEB006E8CC1 /* BlockCommentExtension.appex */;
+			productType = "com.apple.product-type.xcode-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1240249A1EDDADCD006E8CC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = zzk;
+				TargetAttributes = {
+					124024A11EDDADCD006E8CC1 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MXJJEEMF3U;
+						ProvisioningStyle = Automatic;
+					};
+					124024B71EDDADEB006E8CC1 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = MXJJEEMF3U;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1240249D1EDDADCD006E8CC1 /* Build configuration list for PBXProject "BlockComment" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 124024991EDDADCD006E8CC1;
+			productRefGroup = 124024A31EDDADCD006E8CC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				124024A11EDDADCD006E8CC1 /* BlockComment */,
+				124024B71EDDADEB006E8CC1 /* BlockCommentExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		124024A01EDDADCD006E8CC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124024AA1EDDADCD006E8CC1 /* Assets.xcassets in Resources */,
+				124024AD1EDDADCD006E8CC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124024B61EDDADEB006E8CC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1240249E1EDDADCD006E8CC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124024A81EDDADCD006E8CC1 /* ViewController.swift in Sources */,
+				124024A61EDDADCD006E8CC1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		124024B41EDDADEB006E8CC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124024C01EDDADEB006E8CC1 /* SourceEditorExtension.swift in Sources */,
+				124024C21EDDADEB006E8CC1 /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		124024C51EDDADEB006E8CC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 124024B71EDDADEB006E8CC1 /* BlockCommentExtension */;
+			targetProxy = 124024C41EDDADEB006E8CC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		124024AB1EDDADCD006E8CC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				124024AC1EDDADCD006E8CC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		124024AF1EDDADCD006E8CC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		124024B01EDDADCD006E8CC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		124024B21EDDADCD006E8CC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				INFOPLIST_FILE = BlockComment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.BlockComment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		124024B31EDDADCD006E8CC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				INFOPLIST_FILE = BlockComment/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.BlockComment;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		124024C81EDDADEB006E8CC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BlockCommentExtension/BlockCommentExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				INFOPLIST_FILE = BlockCommentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.BlockComment.BlockCommentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		124024C91EDDADEB006E8CC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BlockCommentExtension/BlockCommentExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				INFOPLIST_FILE = BlockCommentExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.zzk.BlockComment.BlockCommentExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1240249D1EDDADCD006E8CC1 /* Build configuration list for PBXProject "BlockComment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124024AF1EDDADCD006E8CC1 /* Debug */,
+				124024B01EDDADCD006E8CC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		124024B11EDDADCD006E8CC1 /* Build configuration list for PBXNativeTarget "BlockComment" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124024B21EDDADCD006E8CC1 /* Debug */,
+				124024B31EDDADCD006E8CC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		124024C71EDDADEB006E8CC1 /* Build configuration list for PBXNativeTarget "BlockCommentExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				124024C81EDDADEB006E8CC1 /* Debug */,
+				124024C91EDDADEB006E8CC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1240249A1EDDADCD006E8CC1 /* Project object */;
+}
