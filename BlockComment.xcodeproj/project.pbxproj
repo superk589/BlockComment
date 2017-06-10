@@ -54,6 +54,7 @@
 		124024BF1EDDADEB006E8CC1 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
 		124024C11EDDADEB006E8CC1 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		124024C31EDDADEB006E8CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12F988FF1EEC3CCF00D0C75E /* BlockComment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlockComment.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		124024A41EDDADCD006E8CC1 /* BlockComment */ = {
 			isa = PBXGroup;
 			children = (
+				12F988FF1EEC3CCF00D0C75E /* BlockComment.entitlements */,
 				124024A51EDDADCD006E8CC1 /* AppDelegate.swift */,
 				124024A71EDDADCD006E8CC1 /* ViewController.swift */,
 				124024A91EDDADCD006E8CC1 /* Assets.xcassets */,
@@ -186,6 +188,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = MXJJEEMF3U;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					124024B71EDDADEB006E8CC1 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -370,6 +377,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlockComment/BlockComment.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
@@ -387,6 +395,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlockComment/BlockComment.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
