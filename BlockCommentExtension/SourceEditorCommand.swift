@@ -11,6 +11,15 @@ import XcodeKit
 
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     
+    private func removeComment(in lines: NSMutableArray, atIndex index: Int) {
+        guard let line = lines.object(at: index) as? NSString else { return }
+        let newLine = line.replacingOccurrences(of: "*/", with: "").replacingOccurrences(of: "/*", with: "")
+        if newLine.isEmptyLine {
+            lines.removeObject(at: index)
+        } else {
+            lines[index] = newLine
+        }
+    }
     
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
@@ -19,29 +28,35 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         let buffer = invocation.buffer
         let selections = buffer.selections
         let lines = buffer.lines
-        let indentationCharacter: Character = buffer.usesTabsForIndentation ? "\t" : " "
 
         guard let startRange = selections.firstObject as? XCSourceTextRange,
-            let endRange = selections.lastObject as? XCSourceTextRange else {
-                return
+            let endRange = selections.lastObject as? XCSourceTextRange
+        else {
+            completionHandler(nil)
+            return
         }
+        
+        let isEmptyRange = (selections.count == 1 && startRange.isEmpty)
+        
         print("start at \(startRange)")
         print("end at \(endRange)")
         
         let startLine = startRange.start.line
         
-        if endRange.end.column == 0 {
-            endRange.end.line -= 1
-            endRange.end.column = (lines.object(at: endRange.end.line) as? String)?.characters.count ?? 0
+        let endLine: Int
+        if endRange.end.column == 0 && endRange.end.line > startLine {
+            endLine = endRange.end.line - 1
+        } else {
+            endLine = endRange.end.line
         }
-        let endLine = endRange.end.line
-
+        
         guard let startString = buffer.lines.object(at: max(0, startLine)) as? String,
             let endString = buffer.lines.object(at: min(endLine, buffer.lines.count - 1)) as? String,
             let preString = buffer.lines.object(at: max(0, startLine - 1)) as? String,
             let postString = buffer.lines.object(at: min(endLine + 1, buffer.lines.count - 1)) as? String
-            else {
-                return
+        else {
+            completionHandler(nil)
+            return
         }
         
         print("startLine is \(startString)")
@@ -53,16 +68,16 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         let surrounded: Bool
         
         if startString.characters.drop(while: { (c) -> Bool in
-            c == indentationCharacter
+            [" ", "\t"].contains(c)
         }).starts(with: "/*".characters) && endString.characters.drop(while: { (c) -> Bool in
-            c == indentationCharacter
+            [" ", "\t"].contains(c)
         }).starts(with: "*/".characters) {
             commented = true
             surrounded = false
         } else if preString.characters.drop(while: { (c) -> Bool in
-            c == indentationCharacter
+            [" ", "\t"].contains(c)
         }).starts(with: "/*".characters) && postString.characters.drop(while: { (c) -> Bool in
-            c == indentationCharacter
+            [" ", "\t"].contains(c)
         }).starts(with: "*/".characters) {
             commented = true
             surrounded = true
@@ -77,32 +92,28 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         if commented {
             
             if surrounded {
-                lines.removeObject(at: endLine + 1)
-                lines.removeObject(at: startLine - 1)
+                removeComment(in: lines, atIndex: endLine + 1)
+                removeComment(in: lines, atIndex: startLine - 1)
             } else {
-                let start = lines.object(at: startLine) as! NSString
-                lines[startLine] = start.replacingOccurrences(of: "/*", with: "")
-                let end = lines.object(at: endLine) as! NSString
-                lines[endLine] = end.replacingOccurrences(of: "*/", with: "")
+                removeComment(in: lines, atIndex: endLine)
+                removeComment(in: lines, atIndex: startLine)
             }
             
         } else {
-            
             var numberOfIndentationCharacter = Int.max
             for index in startLine...endLine {
                 if let line = lines.object(at: index) as? String {
+                    if line == "\n" && startLine != endLine { continue }
                     numberOfIndentationCharacter = min(line.characters.prefix{ [" ", "\t"].contains($0) }.reduce(0){ $0 + ($1 == "\t" ? buffer.tabWidth : 1) }, numberOfIndentationCharacter)
                 }
             }
             
-            let prefix: String
-            
+            var prefix: String
             if buffer.usesTabsForIndentation {
-                prefix = String(Array<Character>.init(repeating: "\t", count: numberOfIndentationCharacter / buffer.tabWidth)) + String(Array<Character>.init(repeating: " ", count: numberOfIndentationCharacter % buffer.tabWidth))
+                prefix = Array<String>.init(repeating: "\t", count: numberOfIndentationCharacter / buffer.tabWidth).joined() + Array<String>.init(repeating: " ", count: numberOfIndentationCharacter % buffer.tabWidth).joined()
             } else {
-                prefix = String(Array<Character>.init(repeating: " ", count: numberOfIndentationCharacter))
+                prefix = Array<String>.init(repeating: " ", count: numberOfIndentationCharacter).joined()
             }
-            
             
             print("insert \"\(prefix)*/\"at line \(endLine + 1)")
             lines.insert("\(prefix)*/", at: endLine + 1)
@@ -111,13 +122,37 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             
             if startRange.start.column == 0 {
                 startRange.start.line += 1
+                if isEmptyRange {
+                    endRange.end.line += 1
+                }
             }
-            
+
         }
+
+        completionHandler(nil)
+        
+        print("final selections are \(selections)")
         
         print("--------------command end--------------")
-    
-        completionHandler(nil)
     }
     
+}
+
+extension String {
+    var isEmptyLine: Bool {
+        var result = true
+        for c in characters {
+            if ![" ", "\t", "\n"].contains(c) {
+                result = false
+                break
+            }
+        }
+        return result
+    }
+}
+
+extension XCSourceTextRange {
+    var isEmpty: Bool {
+        return start.column == end.column && start.line == end.line
+    }
 }
