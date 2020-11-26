@@ -15,6 +15,8 @@
 		124024C01EDDADEB006E8CC1 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124024BF1EDDADEB006E8CC1 /* SourceEditorExtension.swift */; };
 		124024C21EDDADEB006E8CC1 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124024C11EDDADEB006E8CC1 /* SourceEditorCommand.swift */; };
 		124024C61EDDADEB006E8CC1 /* BlockCommentExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 124024B81EDDADEB006E8CC1 /* BlockCommentExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DD01E191256C49BE00BABD6C /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD01E190256C49BE00BABD6C /* XcodeKit.framework */; };
+		DD01E192256C49BE00BABD6C /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DD01E190256C49BE00BABD6C /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DD01E193256C49BE00BABD6C /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DD01E192256C49BE00BABD6C /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +68,7 @@
 		124024C11EDDADEB006E8CC1 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
 		124024C31EDDADEB006E8CC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12F988FF1EEC3CCF00D0C75E /* BlockComment.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BlockComment.entitlements; sourceTree = "<group>"; };
+		DD01E190256C49BE00BABD6C /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +84,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				124024BB1EDDADEB006E8CC1 /* Cocoa.framework in Frameworks */,
+				DD01E191256C49BE00BABD6C /* XcodeKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +126,7 @@
 		124024B91EDDADEB006E8CC1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD01E190256C49BE00BABD6C /* XcodeKit.framework */,
 				124024BA1EDDADEB006E8CC1 /* Cocoa.framework */,
 			);
 			name = Frameworks;
@@ -164,6 +180,7 @@
 				124024B41EDDADEB006E8CC1 /* Sources */,
 				124024B51EDDADEB006E8CC1 /* Frameworks */,
 				124024B61EDDADEB006E8CC1 /* Resources */,
+				DD01E193256C49BE00BABD6C /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -425,6 +442,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				CURRENT_PROJECT_VERSION = 3;
 				INFOPLIST_FILE = BlockCommentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
@@ -444,6 +462,7 @@
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = MXJJEEMF3U;
+				CURRENT_PROJECT_VERSION = 3;
 				INFOPLIST_FILE = BlockCommentExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
