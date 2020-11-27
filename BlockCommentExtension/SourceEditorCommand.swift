@@ -67,18 +67,18 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         let commented: Bool
         let surrounded: Bool
         
-        if startString.characters.drop(while: { (c) -> Bool in
+        if startString.drop(while: { (c) -> Bool in
             [" ", "\t"].contains(c)
-        }).starts(with: "/*".characters) && endString.characters.drop(while: { (c) -> Bool in
+        }).starts(with: "/*") && endString.drop(while: { (c) -> Bool in
             [" ", "\t"].contains(c)
-        }).starts(with: "*/".characters) {
+        }).starts(with: "*/") {
             commented = true
             surrounded = false
-        } else if preString.characters.drop(while: { (c) -> Bool in
+        } else if preString.drop(while: { (c) -> Bool in
             [" ", "\t"].contains(c)
-        }).starts(with: "/*".characters) && postString.characters.drop(while: { (c) -> Bool in
+        }).starts(with: "/*") && postString.drop(while: { (c) -> Bool in
             [" ", "\t"].contains(c)
-        }).starts(with: "*/".characters) {
+        }).starts(with: "*/") {
             commented = true
             surrounded = true
         } else {
@@ -104,7 +104,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             for index in startLine...endLine {
                 if let line = lines.object(at: index) as? String {
                     if line == "\n" && startLine != endLine { continue }
-                    numberOfIndentationCharacter = min(line.characters.prefix{ [" ", "\t"].contains($0) }.reduce(0){ $0 + ($1 == "\t" ? buffer.tabWidth : 1) }, numberOfIndentationCharacter)
+                    numberOfIndentationCharacter = min(line.prefix{ [" ", "\t"].contains($0) }.reduce(0){ $0 + ($1 == "\t" ? buffer.tabWidth : 1) }, numberOfIndentationCharacter)
                 }
             }
             
@@ -141,7 +141,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 extension String {
     var isEmptyLine: Bool {
         var result = true
-        for c in characters {
+        for c in self {
             if ![" ", "\t", "\n"].contains(c) {
                 result = false
                 break
